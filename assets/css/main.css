@@ -9,8 +9,8 @@
     --white: rgba(255, 255, 255, 1);
     --black: rgba(0, 0, 0, 1);
     --main-purple: rgba(94, 77, 133, 1);
-    --main-purple-light: rgba(94, 77, 133, .7);
-    --main-purple-dark: rgba(68, 47, 133, 1);
+    --main-purple-light: rgba(97, 66, 189, 1);
+    --main-purple-dark: rgba(74, 36, 188, 1);
     --main-background: rgba(35, 38, 43, 1);
 }
 
@@ -24,15 +24,15 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar {
     width: 6px;
-    background-color: var(--main-purple);
+    background-color: var(--main-purple-light);
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: var(--main-purple);
+    background-color: var(--main-purple-light);
 }
 
 .navbar-custom {
-    background-color: var(--main-purple);
+    background-color: var(--main-purple-light);
 }
 
 h1,
@@ -42,7 +42,8 @@ h4,
 h5,
 p,
 a,
-span {
+span,
+label {
     color: var(--white);
 }
 
@@ -66,10 +67,6 @@ section.content-separator {
     margin-top: 90px;
 }
 
-.img-radius {
-    border-radius: 28px;
-}
-
 /* START CSS HOME */
 .home-top h1 {
     font-size: 2em;
@@ -84,7 +81,7 @@ section.content-separator {
     border-radius: 28px;
     left: 35%;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .box-background-left {
@@ -96,5 +93,199 @@ section.content-separator {
     border-radius: 28px;
     right: 35%;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.5;
+}
+
+.conteudo-login {
+    flex-direction: row;
+}
+
+.conteudo-login .item-img {
+    width: 60%;
+}
+
+.conteudo-login .block-form {
+    justify-content: center;
+    padding: 0 30px;
+    height: 100vh;
+}
+
+.conteudo-login .block-form {
+    height: 100vh;
+}
+
+.conteudo-login .item-form {
+    width: 40%;
+    background-color: var(--main-purple-light);
+}
+
+.conteudo-login .block-image {
+    display: flex;
+    height: 100%;
+}
+
+.conteudo-login .block-image img {
+    margin: auto;
+    width: 65%;
+}
+
+.btnFisicaLabel {
+    cursor: pointer;
+    text-align: center;
+    float: left;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid var(--main-purple-dark);
+    color: var(--white);
+    background-color: var(--main-purple-light);
+}
+
+.btnOngLabel label,
+.btnFisicaLabel label {
+    cursor: pointer;
+}
+
+.btnFisicaLabel .btnFisica {
+    text-align: center;
+    left: 0;
+    position: absolute;
+    width: 49%;
+    background-color: var(--main-purple-light);
+    padding: auto;
+    height: 90%;
+    visibility: hidden;
+    top: 0;
+}
+
+.btnOngLabel {
+    cursor: pointer;
+    text-align: center;
+    float: right;
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--main-purple-dark);
+    color: var(--white);
+    background-color: var(--main-purple-light);
+}
+
+.btnOngLabel .btnOng { 
+    text-align: center;
+    left: 0;
+    position: absolute;
+    width: 49%;
+    background-color: var(--main-purple-light);
+    padding: auto;
+    height: 90%;
+    visibility: hidden;
+    top: 0;
+}
+
+.buttonTypeActive {
+    color: #fff;
+    background-color: var(--main-purple-dark);
+}
+
+.ongForm {
+    opacity: 0;
+    display: none;
+}
+
+.ongForm label,
+.peopleForm label,
+.loginForm label {
+    margin-bottom: 5px;
+}
+
+.ongForm input,
+.peopleForm input,
+.loginForm input {
+    background-color: var(--main-purple-dark);
+    border: none;
+    color: var(--white);
+    font-weight: 400;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: none;
+}
+
+.ongForm input::placeholder,
+.peopleForm input::placeholder,
+.loginForm input::placeholder {
+    color: rgba(255, 255, 255, .3);
+} 
+
+
+.ongForm input:focus,
+.peopleForm input:focus,
+.loginForm input:focus {
+    color: var(--white);
+    background-color: var(--main-purple-dark);
+    outline: none;
+    box-shadow: none;
+}
+
+.ongForm .btnConfirm,
+.peopleForm .btnConfirm,
+.loginForm .btnConfirm {
+    background-color: var(--main-purple-light);
+    color: var(--white);
+    font-weight: 700;
+    padding: 5px 25px;
+    border: 2px solid var(--main-purple-dark);
+    transition: all .7s;
+    max-width: 100%;
+}
+
+.ongForm .btnConfirm:hover,
+.peopleForm .btnConfirm:hover,
+.loginForm .btnConfirm:hover {
+    background-color: var(--main-purple-dark);
+    border: 2px solid var(--main-purple-dark);
+}
+
+.linkReturnForm {
+    font-size: 12px;
+    color: #dedede;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+    transition: all .7s;
+}
+
+.linkReturnForm:hover {
+    color: var(--white);
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 767px){
+    .box-background-right, .box-background-left {
+        left: 0;
+        width: 95%;
+        margin: 0 10px;
+    }
+    .img-content-top {
+        margin-top: 30px;
+    }
+    .img-content-bottom {
+        margin-bottom: 30px;
+    }
+    .conteudo-login {
+        flex-direction: column;
+    }
+    .conteudo-login .item-img {
+        width: 100%;
+    }
+    .conteudo-login .item-form {
+        width: 100%;
+    }
+    .conteudo-login .block-image img {
+        width: 80%;
+    }
+    .conteudo-login .block-form {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        height: 100%;
+    }
 }

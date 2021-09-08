@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thon-Thon - Resolvendo Problemas na Prática</title>
+    <title>Doação de Comida - Encontre a ONG que você se identifica</title>
 
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -19,7 +19,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam laborum impedit repudiandae. Vitae veniam saepe voluptatem aperiam, officiis itaque quaerat excepturi ut accusamus repudiandae, facilis culpa, sapiente earum molestiae fuga.</p>
                 </div>
                 <div class="col-12 col-md-6">
-                    <img class="w-100 img-radius" src="https://via.placeholder.com/1920x1080" alt="">
+                    <img class="w-100" src="assets/img/undraw_cookie_love_ulvn.svg" alt="">
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="row position-relative">
                 <div class="box-background-right"></div>
                 <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
-                    <img class="w-100 img-radius" src="https://via.placeholder.com/1920x1080" alt="">
+                    <img class="w-100 img-content-top" src="assets/img/undraw_diet_ghvw.svg" alt="">
                 </div>
                 <div class="col-12 col-md-6 p-4 p-md-5">
                     <span>O que Fazemos</span>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                     
-                <img class="w-100 img-radius img-content-bottom" src="https://via.placeholder.com/1920x1080" alt=""></div>
+                <img class="w-100 img-content-bottom" src="assets/img/undraw_donut_love_kau1.svg" alt=""></div>
             </div>
         </div>
     </section>

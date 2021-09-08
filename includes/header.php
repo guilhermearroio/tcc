@@ -29,16 +29,20 @@
 </head>
 
 <body>
+    <?php 
+        $uri = $_SERVER['REQUEST_URI'];
+        if(stripos(basename($uri), 'login') !== 0 && stripos(basename($uri), 'register') !== 0){
+    ?>
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Doação de Comida</a>
+            <a class="navbar-brand" href="index.php">Doação de Comida</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSubMenu" aria-controls="navbarSubMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSubMenu">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#" title="Página de login">Home</a>
+                        <a class="nav-link text-light" href="#" title="Página de login">ONG's</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="login.php" title="Página de login">Login</a>
@@ -47,3 +51,6 @@
             </div>
         </div>
     </nav>
+    <?php 
+        }
+    ?>
