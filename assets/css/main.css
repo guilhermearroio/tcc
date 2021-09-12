@@ -130,6 +130,7 @@ section.content-separator {
 }
 
 .btnFisicaLabel {
+    width: 100%;
     cursor: pointer;
     text-align: center;
     float: left;
@@ -158,6 +159,7 @@ section.content-separator {
 }
 
 .btnOngLabel {
+    width: 100%;
     cursor: pointer;
     text-align: center;
     float: right;
@@ -185,7 +187,8 @@ section.content-separator {
     background-color: var(--main-purple-dark);
 }
 
-.ongForm {
+.ongForm,
+.invisibleStep {
     opacity: 0;
     display: none;
 }
@@ -198,7 +201,9 @@ section.content-separator {
 
 .ongForm input,
 .peopleForm input,
-.loginForm input {
+.loginForm input,
+.ongForm select,
+.ongForm textarea {
     background-color: var(--main-purple-dark);
     border: none;
     color: var(--white);
@@ -210,14 +215,18 @@ section.content-separator {
 
 .ongForm input::placeholder,
 .peopleForm input::placeholder,
-.loginForm input::placeholder {
+.loginForm input::placeholder,
+.ongForm select::placeholder,
+.ongForm textarea::placeholder {
     color: rgba(255, 255, 255, .3);
 } 
 
 
 .ongForm input:focus,
 .peopleForm input:focus,
-.loginForm input:focus {
+.loginForm input:focus,
+.ongForm select:focus
+.ongForm textarea:focus {
     color: var(--white);
     background-color: var(--main-purple-dark);
     outline: none;
