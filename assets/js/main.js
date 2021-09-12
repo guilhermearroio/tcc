@@ -16,14 +16,26 @@ function btnSelectType(element){
 }
 
 function nextStep(element){
-    var getNextStep = element.getAttribute('data-next');
-    var getThisStep = element.getAttribute('data-step');
-    /* var getAllSteps = document.querySelectorAll('.step'); */
-    fade( document.querySelector('.'+getThisStep), document.querySelector('.'+getNextStep), 'flex');
+    var nextStep = element.getAttribute('data-next');
+    var thisStep = element.getAttribute('data-step');
+    var nextProgresStep = document.querySelector('[data-step="'+nextStep+'"]');
+    var thisProgresStep = document.querySelector('[data-step="'+thisStep+'"]');
+    var nextProgressElement = nextProgresStep.querySelector('.progress-bar');
+    var thisProgressElement = thisProgresStep.querySelector('.progress-bar');
+    nextProgressElement.setAttribute('style', 'width: 100%');
+    nextProgressElement.setAttribute('aria-valuenow', '100');
+    nextProgressElement.setAttribute('aria-valuemax', '100');
+    thisProgressElement.setAttribute('style', 'width: 0%');
+    thisProgressElement.setAttribute('aria-valuenow', '0');
+    thisProgressElement.setAttribute('aria-valuemax', '0');
+    setTimeout(function(){thisProgresStep.classList.remove('progressActived')}, 700);
+    nextProgresStep.classList.add('progressActived');
+
+    fade( document.querySelector('.'+thisStep), document.querySelector('.'+nextStep), 'flex');
 }
 
 function fade(element, secondElement, displayStyle) {
-    var op = 1;  // initial opacity
+    var op = 1;
     var timer = setInterval(function () {
         if (op <= 0.1){
             clearInterval(timer);
@@ -37,7 +49,7 @@ function fade(element, secondElement, displayStyle) {
 }
 
 function fadeIn(element, displayStyle) {
-    var op = 0.1;  // initial opacity
+    var op = 0.1;
     element.style.display = displayStyle;
     var timer = setInterval(function () {
         if (op >= 1){
@@ -70,6 +82,10 @@ var doc = document.getElementById('cnpjLabel');
 var docMask = ['99.999.999/9999-99', '99.999.999/9999-99'];
 VMasker(doc).maskPattern(docMask[0]);
 doc.addEventListener('input', inputHandler.bind(undefined, docMask, 14), false);
+
+var cep = document.getElementById('cepLabel');
+VMasker(cep).maskPattern('99999-999');
+doc.addEventListener('input', inputHandler.bind(undefined, docMask, 9), false);
 
 function setInputFilter(textbox, inputFilter) {
     ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {

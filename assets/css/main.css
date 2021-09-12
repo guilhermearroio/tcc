@@ -96,37 +96,11 @@ section.content-separator {
     opacity: 0.5;
 }
 
-.conteudo-login {
-    flex-direction: row;
-}
-
-.conteudo-login .item-img {
-    width: 60%;
-}
-
-.conteudo-login .block-form {
+.block-form {
     justify-content: center;
-    padding: 0 30px;
-    height: 100vh;
-}
-
-.conteudo-login .block-form {
-    height: 100vh;
-}
-
-.conteudo-login .item-form {
-    width: 40%;
-    background-color: var(--main-purple-light);
-}
-
-.conteudo-login .block-image {
-    display: flex;
+    min-height: 100vh;
     height: 100%;
-}
-
-.conteudo-login .block-image img {
-    margin: auto;
-    width: 65%;
+    background-color: var(--main-purple-light);
 }
 
 .btnFisicaLabel {
@@ -193,9 +167,37 @@ section.content-separator {
     display: none;
 }
 
+.progressStep {
+    line-height: 100%;
+}
+
+.ongForm span.stepSpan {
+    font-size: 10px;
+    font-style: italic;
+    color: rgba(255, 255, 255, .3);
+}
+
+.ongForm .progressActived span.stepSpan {
+    color: var(--white);
+}
+
+.progressActived .progress,
+.progressActived .progress .progress-bar {
+    transition: all .7;
+}
+
+.progress-bar {
+    background-color: transparent;
+} 
+
+.progressActived .progress-bar {
+    background-color: var(--main-purple-dark);
+}
+
 .ongForm label,
 .peopleForm label,
-.loginForm label {
+.loginForm label,
+.ongForm span.stepSpan {
     margin-bottom: 5px;
 }
 
@@ -292,9 +294,9 @@ section.content-separator {
     .conteudo-login .block-image img {
         width: 80%;
     }
-    .conteudo-login .block-form {
+    .block-form {
         padding-top: 30px;
         padding-bottom: 30px;
-        height: 100%;
+        /* height: 100%; */
     }
 }
