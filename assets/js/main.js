@@ -106,4 +106,41 @@ function setInputFilter(textbox, inputFilter) {
 
 setInputFilter(document.getElementById("numeroLabel"), function(value) {
     return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
-  });
+});
+
+/* $.ajax({
+    'url': 'https://www.receitaws.com.br/v1/cnpj/39336273000147',
+    'type': "GET",
+    'dataType': 'jsonp',
+    'success': function(dado){
+        console.log(dado);
+    }
+}); */
+
+function jsonp(url, callback) {
+    var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+    window[callbackName] = function(data) {
+        delete window[callbackName];
+        document.body.removeChild(script);
+        callback(data);
+    };
+
+    var script = document.createElement('script');
+    script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+    document.body.appendChild(script);
+}
+
+function checkCnpj(cnpj) {
+    jsonp('https://www.receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, ''), function(data) {
+        console.log(data);
+        document.getElementById('razaoLabel').value = data['nome'];
+        document.getElementById('fantasiaLabel').value = data['fantasia'];
+        document.getElementById('cepLabel').value = data['cep'];
+        document.getElementById('logradouroLabel').value = data['logradouro'];
+        document.getElementById('numeroLabel').value = data['numero'];
+        document.getElementById('complementoLabel').value = data['complemento'];
+        document.getElementById('bairroLabel').value = data['bairro'];
+        document.getElementById('cidadeLabel').value = data['municipio'];
+        document.getElementById('estadoLabel').value = data['uf'];
+    });
+}

@@ -107,7 +107,7 @@
                                     <div class="step firstStep row">
                                         <div class="col-12 my-2">
                                             <label for="cnpjLabel">CNPJ</label>
-                                            <input type="text" name="nome" class="form-control" id="cnpjLabel" placeholder="CNPJ" aria-label="CNPJ" required>
+                                            <input type="text" name="nome" class="form-control" id="cnpjLabel" placeholder="CNPJ" aria-label="CNPJ" onblur="checkCnpj(this.value)" required>
                                             <div class="invalid-feedback">
                                                 Por favor preencher com um CNPJ válido
                                             </div>
@@ -276,6 +276,7 @@
         </div>
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/vanilla-masker.min.js"></script>
     <?php include('includes/footer.php') ?>
     </body>
