@@ -26,6 +26,9 @@
     <meta name="author" content="Guilherme Arroio & Weslley Costa">
     <meta property="og:description" content="Encontre ONG's ajudeas, para que elas consigam cumprir seus objetivos na sociedade, faça sua parte e ajude o Brasil.">
 
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
 </head>
 
 <body>
@@ -42,7 +45,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSubMenu">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#" title="Página de login">ONG's</a>
+                        <a class="nav-link text-light" href="home.php" title="Página de login">ONG's</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="login.php" title="Página de login">Login</a>

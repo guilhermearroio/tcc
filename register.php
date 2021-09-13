@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doação de Comida - Cadastre-se</title>
 
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-
     <?php include('includes/header.php') ?>
 
     <section>
@@ -276,8 +273,8 @@
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/vanilla-masker.min.js"></script>
+    <script src="assets/js/register.js"></script>
     <?php include('includes/footer.php') ?>
     </body>
 

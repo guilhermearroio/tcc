@@ -1,0 +1,75 @@
+html,
+body {
+    height: 100%;
+}
+
+/* .cardsFlip {
+    transition: transform 1s;
+    transform-style: preserve-3d;
+} */
+
+.myCard {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border: 2px solid var(--main-purple-dark);
+    border-radius: 28px;
+    cursor: pointer;
+    backface-visibility: hidden;
+}
+
+.myCardBack {
+    transform: rotateY(180deg );
+}
+
+.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.is-flipped .myCard .imgBorderRadius {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.blockCenter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.myCard h2 {
+    font-size: 22px;
+    letter-spacing: 1xp;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+}
+
+.myCard h3 {
+    font-size: 16px;
+    letter-spacing: 1xp;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+}
+
+.myCard h5 {
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+}
+
+.myCard p {
+    font-size: 12px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    text-align: justify;
+}
+
+.imgBorderRadius {
+    border-radius: 28px;
+    transition: all .7s;
+    animation-delay: .5s;
+}
