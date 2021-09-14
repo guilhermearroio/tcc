@@ -10,128 +10,61 @@
     
     <?php include('includes/header.php') ?>
 
-    <section class="content-separator h-100">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-12 col-md-6 my-3 cardsFlip" style="perspective: 1000px;" onclick="flipCard(this);">
-                    <!-- <div class="cardsFlip" onclick="flipCard(this);"> -->
-                        <div class="row myCard position-absolute">
-                            <div class="col-6 blockCenter">
+    <section class="content-separator">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 scene scene--card">
+                    <div class="myCard" onclick="flipCard(this);">
+                        <div class="card__face card__face--front">
+                            <div class="textMyCard">
                                 <h2>Instituto Alimentar</h2>
                                 <h5>Campanha Arrecadação de Cestas Básicas e Kits Higiene</h5>
-                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação  de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
+                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
                             </div>
-                            <div class="col-6">
-                                <img class="w-100 img-fluid imgBorderRadius" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
-                            </div>
-                        </div>
-                        <div class="row myCard myCardBack position-absolute">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                </div>
+                            <div class="imgMyCard">
+                                <img class="w-100 img-fluid" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
                             </div>
                         </div>
-                    <!-- </div> -->
-                </div>
-                <div class="col-12 col-md-6 my-3 position-relative" style="perspective: 1000px;">
-                    <div class="cardsFlip" onclick="flipCard(this);">
-                        <div class="row myCard position-absolute">
-                            <div class="col-6 blockCenter">
-                                <img class="w-100 img-fluid imgBorderRadius" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
+                        <div class="card__face card__face--back">
+                            <div class="textMyCard textMissao">
+                                <h4>Missão</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
                             </div>
-                            <div class="col-6 blockCenter">
-                                <h2>Instituto Alimentar</h2>
-                                <h5>Campanha Arrecadação de Cestas Básicas e Kits Higiene</h5>
-                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação  de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
+                            <div class="textMyCard textVisao">
+                                <h4>Visão</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
                             </div>
-                        </div>
-                        <div class="row myCard myCardBack position-absolute">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                </div>
+                            <div class="textMyCard textVisao">
+                                <h4>Valores</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 my-3 position-relative" style="perspective: 1000px;">
-                    <div class="cardsFlip" onclick="flipCard(this);">
-                        <div class="row myCard position-absolute">
-                            <div class="col-6 blockCenter">
+                <div class="col-12 col-md-6 scene scene--card">
+                    <div class="myCard" onclick="flipCard(this);">
+                        <div class="card__face card__face--front">
+                            <div class="textMyCard">
                                 <h2>Instituto Alimentar</h2>
                                 <h5>Campanha Arrecadação de Cestas Básicas e Kits Higiene</h5>
-                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação  de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
+                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
                             </div>
-                            <div class="col-6 imgEffect">
-                                <img class="w-100 img-fluid imgBorderRadius" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
+                            <div class="imgMyCard">
+                                <img class="w-100 img-fluid" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
                             </div>
                         </div>
-                        <div class="row myCard myCardBack position-absolute">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-3">
-                                        <h3>Instituto Alimentar</h3>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente cum amet. Maxime voluptas nobis consectetur reiciendis porro, fugiat tempore placeat? Reiciendis deleniti architecto amet est adipisci eaque iusto veritatis.</p>
-                                    </div>
-                                </div>
+                        <div class="card__face card__face--back">
+                            <div class="textMyCard textMissao">
+                                <h4>Missão</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
+                            </div>
+                            <div class="textMyCard textVisao">
+                                <h4>Visão</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
+                            </div>
+                            <div class="textMyCard textVisao">
+                                <h4>Valores</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
                             </div>
                         </div>
                     </div>
