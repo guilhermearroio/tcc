@@ -66,11 +66,11 @@ body {
     margin: 0;
 }
 
-.card__face--front div:first-child {
+.card__face--front .textMyCard {
     width: 60%;
 }
 
-.card__face--front div:last-child {
+.card__face--front .imgMyCard {
     width: 40%;
 }
 
