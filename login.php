@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doação de Comida - Login</title>
+    <title>Rede de Doação para ONGs - Login</title>
     
     <?php include('includes/header.php') ?>
 

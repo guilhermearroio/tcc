@@ -60,3 +60,4 @@ function fadeIn(element, displayStyle) {
         op += op * 0.1;
     }, 20);
 }
+

@@ -70,9 +70,47 @@ p {
 
 section.content-separator {
     margin-top: 90px;
+    margin-bottom: 90px;
 }
 
 /* START CSS HOME */
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.btnPesquisa,
+.btnPesquisa:active,
+.btnPesquisa:focus {
+    background-color: var(--main-purple-dark);
+    border: none;
+    color: var(--white);
+    font-weight: 400;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: none;
+}
+
+.btnPesquisar {
+    background-color: transparent;
+    border: 2px solid var(--main-purple-dark);
+    border-radius: 8px;
+    padding: 5px 10px;
+    text-decoration: none;
+    /* font-weight: 700; */
+    letter-spacing: 1px;
+    color: var(--main-purple-dark);
+    transition: all .5s;
+}
+
+.btnPesquisar:hover {
+    background-color: var(--main-purple-dark);
+    color: var(--white);
+    border-color: var(--main-purple-dark);
+}
+
 .home-top h1 {
     font-size: 2em;
 }
@@ -273,6 +311,65 @@ section.content-separator {
     color: var(--white);
 }
 
+/* FOOTER CSS */
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+ul.footerContato,
+ul.footerContato li ul,
+ul.siteMap ul,
+ul.siteMap {
+    list-style: none;
+    text-align: start;
+}
+
+ul.footerContato li,
+ul.footerContato li ul li,
+ul.siteMap li {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+ul.footerContato li:first-child,
+ul.siteMap li:first-child {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--main-purple-light);
+}
+
+ul.footerContato li ul li:first-child {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+ul.siteMap li a {
+    color: var(--white);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+.footerDevs {
+    font-weight: 500;
+    color: var(--white);
+}
+
+.footerDevs a {
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+ul.siteMap li a:hover,
+.footerDevs a:hover {
+    color: var(--main-purple-light);
+}
+
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 767px){
@@ -303,5 +400,15 @@ section.content-separator {
         padding-top: 30px;
         padding-bottom: 30px;
         /* height: 100%; */
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    section.content-separator {
+        margin-top: 20px;
+        margin-bottom: 0; 
+    }
+    section.content-separator:first-of-type {
+        margin-top: 90px;
     }
 }

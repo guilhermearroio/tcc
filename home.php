@@ -4,129 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doação de Comida - Encontre a ONG que você se identifica</title>
+    <title>Rede de Doação para ONGs - Encontre a ONG que você se identifica</title>
 
     <link rel="stylesheet" href="assets/css/home.css">
     
-    <?php include('includes/header.php') ?>
+    <?php 
+        include('includes/header.php');
+        $busca = $_GET['busca'] !== '' ? $_GET['busca'] : NULL;
+
+        if(is_null($busca)){
+            require_once ('Model/Usuarios.php');
+            $usuario = new Usuarios();
+            $ongs = $usuario->visualizaOng();
+            echo 'usuario';
+        } else {
+            echo 'pesquisa: ' . $busca;
+            require_once ('Model/Pesquisa.php');
+            $pesquisa = new Pesquisa();
+            $ongs = $pesquisa->buscarOng($busca);
+            /* echo 'busca'; */
+        }
+    ?>
 
     <section class="content-separator">
         <div class="container">
             <div class="row my-4">
-                <div class="col-12 col-md-6 scene scene--card">
-                    <div class="myCard" onclick="flipCard(this);">
-                        <div class="card__face card__face--front">
-                            <div class="textMyCard">
-                                <h2>Instituto Alimentar</h2>
-                                <h5>Campanha Arrecadação de Cestas Básicas e Kits Higiene</h5>
-                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
-                            </div>
-                            <div class="imgMyCard">
-                                <img class="w-100 img-fluid" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
-                            </div>
+                <?php 
+                    if(!empty($ongs)){
+                        foreach($ongs as $values){
+                 ?>
+                    <div class="myCard">
+                        <div class="col-12 col-md-3 pe-md-2">
+                            <img class="w-100 img-fluid" src="assets/img/logo/<?php echo $values['codUser'] ?>.jpg" alt="">
                         </div>
-                        <div class="card__face card__face--back">
-                            <div class="textMyCard textMissao">
-                                <h4>Missão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Visão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Valores</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
+                        <div class="col-12 col-md-9 ps-md-2 mt-4 mt-md-0">
+                            <h2><?php echo empty($values['nomeFantasia']) ? $values['razaoSocial'] : $values['nomeFantasia']; ?></h2>
+                            <p><?php echo $values['descricao']; ?></p>
+                            <a href="ong.php?codOng=<?php echo $values['codUser'];?>" class="btnConhecer">Visitar</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 scene scene--card">
-                    <div class="myCard" onclick="flipCard(this);">
-                        <div class="card__face card__face--front">
-                            <div class="imgMyCard">
-                                <img class="w-100 img-fluid" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
-                            </div>
-                            <div class="textMyCard">
-                                <h2>Instituto Alimentar</h2>
-                                <h5>Campanha Arrecadação de Cestas Básicas e Kits Higiene</h5>
-                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
-                            </div>
-                        </div>
-                        <div class="card__face card__face--back">
-                            <div class="textMyCard textMissao">
-                                <h4>Missão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Visão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Valores</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                        </div>
+                <?php
+                        }
+                    } else {
+                ?>
+                <div class="myCard">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">Nenhuma ONG encontrada</p>
                     </div>
                 </div>
-            </div>
-            <div class="row my-4">
-                <div class="col-12 col-md-6 scene scene--card">
-                    <div class="myCard" onclick="flipCard(this);">
-                        <div class="card__face card__face--front">
-                            <div class="imgMyCard">
-                                <img class="w-100 img-fluid" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
-                            </div>
-                            <div class="textMyCard">
-                                <h2>Instituto Alimentar</h2>
-                                <h5>Campanha Arrecadação de Cestas Básicas e Kits Higiene</h5>
-                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
-                            </div>
-                        </div>
-                        <div class="card__face card__face--back">
-                            <div class="textMyCard textMissao">
-                                <h4>Missão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Visão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Valores</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 scene scene--card">
-                    <div class="myCard" onclick="flipCard(this);">
-                        <div class="card__face card__face--front">
-                            <div class="textMyCard">
-                                <h2>Instituto Alimentar</h2>
-                                <h5>Campanha Arrecadação de Cestas Básicas e Kits Higiene</h5>
-                                <p>Em meio à pandemia da Covid-19, o Instituto Alimentar, desenvolve a campanha de arrecadação de alimentos, cestas básicas e kits de higiene, para atender ás famílias atendidas no projeto alimentando vidas e casos pontuais que chegam a nossa instituição. Participe!</p>
-                            </div>
-                            <div class="imgMyCard">
-                                <img class="w-100 img-fluid" src="https://static.wixstatic.com/media/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.png/v1/crop/x_0,y_0,w_498,h_302/fill/w_224,h_136,al_c,q_85,usm_0.66_1.00_0.01/bae5f5_1e4d803b8de34ac5996e80c0c88ca5fc~mv2.webp" alt="">
-                            </div>
-                        </div>
-                        <div class="card__face card__face--back">
-                            <div class="textMyCard textMissao">
-                                <h4>Missão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Visão</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                            <div class="textMyCard textVisao">
-                                <h4>Valores</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi unde reprehenderit voluptatem dolorem facere sequi suscipit animi voluptate dolor vero porro, cum deleniti ex in saepe, necessitatibus assumenda adipisci laboriosam?</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </section>

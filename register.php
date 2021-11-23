@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doação de Comida - Cadastre-se</title>
+    <title>Rede de Doação para ONGs - Cadastre-se</title>
 
     <?php include('includes/header.php') ?>
 
@@ -32,7 +32,7 @@
                             </label>
                         </div>
                         <div class="col-12">
-                            <form action="Controllers/RegisterController.php" method="POST" class="row peopleForm needs-validation mt-2" novalidate>
+                            <form action="Controllers/RegisterCliente.php" method="POST" class="row peopleForm needs-validation mt-2" novalidate>
                                 <div class="col-12 col-md-6 my-2">
                                     <label for="nomeLabel">Nome</label>
                                     <input type="text" name="nome" class="form-control" id="nomeLabel" placeholder="Nome" aria-label="Nome" required>
@@ -80,7 +80,7 @@
                                 </div>
                             </form>
                             <div class="row">
-                                <form action="Controllers/RegisterController.php" method="POST" class="ongForm mt-2 needs-validation" novalidate>
+                                <form action="Controllers/RegisterOng.php" method="POST" class="ongForm mt-2 needs-validation" novalidate>
                                     <div class="row">
                                         <div class="col-4 my-2 pe-1 progressStep progressActived" data-step="firstStep">
                                             <span class="stepSpan">Etapa 01</span>
@@ -104,21 +104,21 @@
                                     <div class="step firstStep row">
                                         <div class="col-12 my-2">
                                             <label for="cnpjLabel">CNPJ</label>
-                                            <input type="text" name="nome" class="form-control" id="cnpjLabel" placeholder="CNPJ" aria-label="CNPJ" onblur="checkCnpj(this.value)" required>
+                                            <input type="text" name="cnpj" class="form-control" id="cnpjLabel" placeholder="CNPJ" aria-label="CNPJ" onblur="checkCnpj(this.value)" required>
                                             <div class="invalid-feedback">
                                                 Por favor preencher com um CNPJ válido
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 my-2">
                                             <label for="razaoLabel">Razão Social</label>
-                                            <input type="text" name="nome" class="form-control" id="razaoLabel" placeholder="Razão Social" aria-label="Razão Social" required>
+                                            <input type="text" name="razaoSocial" class="form-control" id="razaoLabel" placeholder="Razão Social" aria-label="Razão Social" required>
                                             <div class="invalid-feedback">
                                                 Por favor preencher a Razão Social
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 my-2">
                                             <label for="fantasiaLabel">Nome Fantasia</label>
-                                            <input type="text" name="sobrenome" class="form-control" id="fantasiaLabel" placeholder="Nome Fantasia" aria-label="Nome Fantasia" required>
+                                            <input type="text" name="nomeFantasia" class="form-control" id="fantasiaLabel" placeholder="Nome Fantasia" aria-label="Nome Fantasia" required>
                                             <div class="invalid-feedback">
                                                 Por favor preencher o Nome Fantasia
                                             </div>
@@ -132,7 +132,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 my-2">
                                             <label for="whatsLabel">Whatsapp da ONG</label>
-                                            <input type="text" name="whatsOng" class="form-control phoneNumber" id="whatsLabel" placeholder="(11) 90000-0000" aria-label="Whatsapp da ONG" required>
+                                            <input type="text" name="celular" class="form-control phoneNumber" id="whatsLabel" placeholder="(11) 90000-0000" aria-label="Whatsapp da ONG" required>
                                             <div class="invalid-feedback">
                                                 Por favor preencher um número válido
                                             </div>

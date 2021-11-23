@@ -1,0 +1,71 @@
+html,
+body {
+    height: 100%;
+}
+
+.imgOng {
+    width: 100%;
+}
+
+.doacaoList {
+    list-style: none;
+    padding: 0;
+}
+
+.doacaoList li {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.doacaoList li span {
+    font-weight: 700;
+}
+
+.owl-carousel .owl-stage-outer {
+    border-radius: 10px;
+}
+
+.owl-carousel .owl-item img{
+    padding: 2px;
+}
+
+.titlePerguntas {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.boxPergunta span.pergunta {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: .9;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.boxPergunta span.resposta {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: .7;
+    display: block;
+    padding-left: 20px;
+}
+
+.boxPergunta span.semResposta {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: .7;
+    display: block;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+.ongUserResposta {
+    cursor: pointer;
+}
+
+@media(max-width: 414px) {
+    .imgOng {
+        width: 100%;
+    }
+}
